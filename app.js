@@ -9,14 +9,14 @@ const mongoose = require('mongoose')
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(cors())
-
+//nice
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
 // ROUTES ...
 app.use(taskRouter)
 app.use(taskIdRouter)
 
-
-// DB CONNECTION
-require("dotenv").config();
 // Connect to MongoDB and start server
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
