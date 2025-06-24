@@ -2,13 +2,13 @@ const express = require("express");
 const app = express();
 const taskRouter = require('./routes/tasksRoutes')
 const taskIdRouter = require('./routes/tasksIdRoutes')
-// const cors = require('cors')
+const cors = require('cors')
 const mongoose = require('mongoose')
 
 // middlewares
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
-// app.use(cors())
+app.use(cors())
 // require('dotenv').config();
 
 // ROUTES ...
